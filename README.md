@@ -1,9 +1,11 @@
 # AI Skills Library
 
-> A curated collection of AI agent skills covering visual engineering, code explanation, product research, skill discovery, marketing, design, and more. Built to compound — every skill makes the system smarter.
+> A curated collection of AI agent skills covering reasoning, development, monetization, content, strategy, creative, data, DevOps, and meta capabilities. Built to compound — every skill makes the system smarter.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-22c55e?logo=github)](https://marktantongco.github.io/ai-skills-library/)
-[![Skills](https://img.shields.io/badge/New_Skills-4-6366f1?logo=robot)]()
+[![Skills](https://img.shields.io/badge/Skills-19-6366f1?logo=robot)]()
+[![New Skills](https://img.shields.io/badge/New_Skills-11-22c55e?logo=plus)]()
+[![Extended Skills](https://img.shields.io/badge/Extended_Skills-3-f97316?logo=arrows-rotate)]()
 [![Sources](https://img.shields.io/badge/Research_Sources-7-eab308)]()
 [![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-ec4899)]()
 
@@ -11,22 +13,100 @@
 
 ## Overview
 
-This repository is the result of a comprehensive research effort into the AI agent skills ecosystem. It includes:
+This repository is the result of a comprehensive research effort into the AI agent skills ecosystem. Across two sessions, it has grown from 4 skills to **19 skills**:
 
-- **4 newly created skills** adapted from community research
+- **11 newly created skills** from this session (reasoning, development, monetization, content, DevOps)
+- **3 extended skills** upgraded with new capabilities (batch processing, GEO optimization, site crawling)
+- **5 skills from the previous session** carried forward and maintained
 - **Evaluation of 7+ external sources** (skills.sh, Anthropic Academy, GitHub, etc.)
-- **40+ existing skills** documented in the system
+- **50+ existing skills** documented in the system
 - **Security-first methodology** for skill vetting and installation
 - **MECE discipline** — one owner skill per type of work, zero overlap
 
-### New Skills Added
+---
 
-| Skill | Category | Description | Source |
-|-------|----------|-------------|--------|
-| [Photography AI](skills/photography-ai/SKILL.md) | Creative | Professional visual engineering framework for AI image/video generation | [marktantongco/aiskills-photog](https://marktantongco.github.io/aiskills-photog/) |
-| [Explained Code](skills/explained-code/SKILL.md) | Education | Beginner-friendly code explanation using analogies, diagrams, and walkthroughs | Anthropic official example |
-| [JTBD Research](skills/jtbd-research/SKILL.md) | Strategy | Jobs to be Done product research methodology with segmentation, job mapping, and interview guides | [snowtema/ajtbd-skills](https://github.com/snowtema/ajtbd-skills) |
-| [Skill Finder](skills/skill-finder/SKILL.md) | Meta | Discovery, evaluation, security vetting, and installation of AI agent skills | [skills.sh](https://skills.sh), [agentskills.io](https://agentskills.io) |
+## Complete Skill Directory
+
+| # | Skill | Category | Description | Lines | Status |
+|---|-------|----------|-------------|-------|--------|
+| 1 | [Chain of Thought](skills/chain-of-thought/SKILL.md) | Reasoning | Step-by-step reasoning for complex problems | 137 | NEW |
+| 2 | [Socratic Method](skills/socratic-method/SKILL.md) | Reasoning | Guide users through strategic questioning | 139 | NEW |
+| 3 | [Simulation Sandbox](skills/simulation-sandbox/SKILL.md) | Reasoning | Test scenarios in simulated environments | 178 | NEW |
+| 4 | [Output Formatter](skills/output-formatter/SKILL.md) | Reasoning | Strict formatting rules for all output types | 157 | NEW |
+| 5 | [Context Compressor](skills/context-compressor/SKILL.md) | Reasoning | Compress long contexts preserving critical information | 208 | NEW |
+| 6 | [Devil's Advocate](skills/devils-advocate/SKILL.md) | Reasoning | Argue against user's premise to strengthen arguments | 239 | NEW |
+| 7 | [MCP Builder](skills/mcp-builder/SKILL.md) | Development | Build MCP servers (TypeScript + Python) | 90 | NEW |
+| 8 | [Web Artifacts Builder](skills/web-artifacts-builder/SKILL.md) | Development | Single-file HTML artifacts with React + Tailwind | 88 | NEW |
+| 9 | [Gumroad Pipeline](skills/gumroad-pipeline/SKILL.md) | Monetization | Lead magnet to funnel to product launch workflow | 102 | NEW |
+| 10 | [Social Content Pillars](skills/social-content-pillars/SKILL.md) | Content | Monthly content calendar for multi-brand social media | 84 | NEW |
+| 11 | [Deployment Manager](skills/deployment-manager/SKILL.md) | DevOps | Deploy, monitor, and update projects across platforms | 101 | NEW |
+| 12 | [Photography AI](skills/photography-ai/SKILL.md) | Creative | Professional visual engineering framework (extended with batch post-processing) | 477 | EXTENDED |
+| 13 | [SEO Content Writer](skills/seo-content-writer/SKILL.md) | Content | SEO content creation with GEO optimization (extended with Generative Engine Optimization) | 901 | EXTENDED |
+| 14 | [Web Reader](skills/web-reader/SKILL.md) | Data | Web page extraction with site crawling and spidering | 1648 | EXTENDED |
+| 15 | [Explained Code](skills/explained-code/SKILL.md) | Education | Beginner-friendly code explanation with analogies and diagrams | 196 | Previous |
+| 16 | [JTBD Research](skills/jtbd-research/SKILL.md) | Strategy | Jobs to be Done product research methodology | 250 | Previous |
+| 17 | [Skill Finder](skills/skill-finder/SKILL.md) | Meta | Skill discovery, evaluation, and installation | 226 | Previous |
+
+---
+
+## Categorized Skill Sections
+
+### Reasoning Skills (6 skills)
+
+Six new cognitive augmentation skills that improve the quality of AI thinking and output:
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **Chain of Thought** | Step-by-step reasoning framework for decomposing complex problems into traceable logical steps | 137 |
+| **Socratic Method** | Guides users through strategic questioning to uncover assumptions, deepen analysis, and reach better conclusions | 139 |
+| **Simulation Sandbox** | Creates safe simulated environments to test scenarios, edge cases, and hypotheses before real-world application | 178 |
+| **Output Formatter** | Enforces strict formatting rules for all output types — tables, code blocks, JSON, markdown — ensuring consistency | 157 |
+| **Context Compressor** | Compresses long conversation contexts while preserving critical information, enabling extended sessions without loss | 208 |
+| **Devil's Advocate** | Systematically argues against the user's premise to identify weaknesses, strengthen arguments, and stress-test ideas | 239 |
+
+### Development Skills (2 skills)
+
+Full-stack development and builder tools:
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **MCP Builder** | Build Model Context Protocol servers in TypeScript and Python — scaffolding, tool definitions, and deployment | 90 |
+| **Web Artifacts Builder** | Create single-file HTML artifacts using React and Tailwind CSS — shareable, self-contained, instant-render | 88 |
+
+### Monetization & Content Skills (2 skills)
+
+Revenue and audience growth tools:
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **Gumroad Pipeline** | End-to-end lead magnet to funnel to product launch workflow — audience building, email capture, and monetization | 102 |
+| **Social Content Pillars** | Monthly content calendar system for multi-brand social media — pillar strategy, batch creation, and scheduling | 84 |
+
+### Strategy & Research Skills (1 skill)
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **JTBD Research** | 8-step Jobs to be Done product research methodology — market segmentation, job mapping, interviews, and copy generation | 250 |
+
+### Creative Skills (1 skill)
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **Photography AI** | Professional visual engineering framework covering prompt engineering, photographic literacy, strategic negation, identity preservation, post-processing (now with batch pipeline), and agent orchestration | 477 |
+
+### Data & DevOps Skills (2 skills)
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **Web Reader** | Web page content extraction with site crawling, spidering, and structured data retrieval (extended) | 1648 |
+| **Deployment Manager** | Deploy, monitor, and update projects across multiple platforms — CI/CD, health checks, and rollback procedures | 101 |
+
+### Meta Skills (2 skills)
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **Skill Finder** | 7-step discovery and installation meta-skill — search, evaluate, security vet, install, and audit | 226 |
+| **Explained Code** | 5-step beginner-friendly code explanation — analogies, diagrams, walkthroughs, gotchas, and practice challenges | 196 |
 
 ---
 
@@ -41,6 +121,16 @@ This repository is the result of a comprehensive research effort into the AI age
    - **Constraints**: Hard rules (what the skill must never do)
    - **Examples**: Ideal output samples
 
+### Paste This URL Into Any AI
+
+The entire skills library is available as a single installable reference:
+
+```
+https://raw.githubusercontent.com/marktantongco/ai-skills-library/main/AGENTS.md
+```
+
+Just paste this URL into any AI agent (Claude, ChatGPT, etc.) and it can read and use all 19 skills immediately.
+
 ### For Developers
 
 ```bash
@@ -51,54 +141,8 @@ git clone https://github.com/marktantongco/ai-skills-library.git
 ls skills/
 
 # Read any skill
-cat skills/photography-ai/SKILL.md
+cat skills/chain-of-thought/SKILL.md
 ```
-
----
-
-## Skill Directory
-
-### `skills/photography-ai/`
-Professional visual engineering skills framework covering 6 core categories:
-
-1. **Technical Prompt Engineering** — Scaffold method, front-loading, photographic vocabulary
-2. **Photographic Literacy** — Lighting patterns, lens selection, aperture control, anamorphic mastery
-3. **Strategic Negation** — Skin realism, anatomical correction, temporal consistency
-4. **Identity Preservation** — Seed locking, reference tools, multi-reference consistency
-5. **Post-Processing** — Iterative refinement, inpainting, external enhancement, quality checklist
-6. **Agent Orchestration** — Multi-agent systems, role-based teams, auditable workflows
-
-### `skills/explained-code/`
-5-step methodology for explaining code to beginners:
-
-1. **Start with an Analogy** — Real-world comparison before any code
-2. **Draw a Diagram** — ASCII art or Mermaid diagrams
-3. **Walk Through** — Step-by-step, 5-15 lines per section
-4. **The Gotcha** — Common pitfall that trips beginners
-5. **Your Turn** — Practice challenge to reinforce learning
-
-### `skills/jtbd-research/`
-8-step Jobs to be Done product research methodology:
-
-1. **Define Research Scope** — Product/domain, target market, research goal
-2. **Segment the Market** — JTBD segmentation with TAM/SAM/SOM
-3. **Build the Job Map** — Full hierarchy: functional, emotional, social
-4. **Identify Risky Assumptions** — Top-5 with desirability/viability/feasibility analysis
-5. **Conduct Customer Interviews** — Structured interview guide (adapted from The Mom Test)
-6. **Synthesize JTBD Statements** — Push/pull/anxiety/habit force analysis
-7. **Generate Landing Page Copy** — Customer-language copy from research
-8. **Plan Respondent Recruitment** — Ongoing recruitment channel strategy
-
-### `skills/skill-finder/`
-7-step discovery and installation meta-skill:
-
-1. **Check Existing Skills** — Prevent duplication before searching
-2. **Search External Sources** — skills.sh, GitHub, Anthropic Academy, agentskills.io
-3. **Evaluate Candidates** — 50-point scorecard (relevance, quality, compatibility, security, maintainability)
-4. **Security Vet** — 10 red-flag checks (automatic rejection on any)
-5. **Install the Skill** — Adapt to SKILL.md format, log installation
-6. **Verify Installation** — Checklist for correctness
-7. **Schedule Audits** — Monthly recurring audit cycle
 
 ---
 
@@ -127,36 +171,6 @@ This library was built by researching and evaluating these sources:
 4. **"Marketing Skills Library by Cory Haynes"** could not be verified. The actual creator of the most prominent marketing skills library is **tyr0nin / AiAiOHHH** (36 skills, not 32).
 
 5. **Deep Research** is a built-in Claude Code subagent feature — equivalent to the Task tool with subagent types in other agent systems.
-
----
-
-## Existing Skills in System
-
-These skills were already installed in the environment before this research:
-
-| Skill | Category | Description |
-|-------|----------|-------------|
-| GSAP Animations | Dev | Animation engineering for React (ScrollTrigger, timelines, micro-interactions) |
-| UI/UX Pro Max | Creative | Design intelligence across frameworks |
-| Marketing Mode | Strategy | 23 marketing disciplines |
-| Fullstack Dev | Dev | Next.js 16, TypeScript, Tailwind CSS 4, shadcn/ui, Prisma |
-| Coding Agent | Dev | Plan-before-code, verify-everything discipline |
-| Visual Design Foundations | Creative | Typography, color, spacing, iconography, accessibility |
-| Content Strategy | Strategy | Content marketing playbook |
-| Charts & Visualization | Data | matplotlib, seaborn, ECharts, D3.js, Mermaid, flowcharts |
-| Image Generation | Creative | AI image generation via z-ai-web-dev-sdk |
-| Web Reader | Data | Page content extraction |
-| Web Search | Data | Web search capabilities |
-| Finance | Data | Financial data analysis |
-| Blog Writer | Creative | Blog content creation |
-| SEO Content Writer | Strategy | SEO-optimized content |
-| Interview Designer | Strategy | Interview guide creation |
-| Podcast Generate | Creative | Podcast episode generation |
-| Storyboard Manager | Creative | Story and storyboard management |
-| Market Research Reports | Strategy | Market analysis and visual reports |
-| Coding Agent | Dev | Structured coding workflow with verification |
-| Skill Creator | Meta | Create, test, and improve skills |
-| Skill Assessor | Meta | Evaluate skill quality and performance |
 
 ---
 
