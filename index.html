@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skills Library - Agent Skills Collection</title>
+    <meta name="description" content="A comprehensive collection of AI agent skills covering photography, code explanation, product research, skill discovery, marketing, design, and more.">
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --bg-card: #141416;
+            --bg-card-hover: #1a1a1e;
+            --border: #2a2a2e;
+            --text: #e4e4e7;
+            --text-muted: #71717a;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --red: #ef4444;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+            --pink: #ec4899;
+            --cyan: #06b6d4;
+            --orange: #f97316;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 13px;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+            background: rgba(99,102,241,0.08);
+        }
+        .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--accent-light), var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 28px; font-weight: 700; }
+        .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+        /* Section */
+        .section { padding: 60px 0; }
+        .section-header { margin-bottom: 40px; }
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        .section-header p { color: var(--text-muted); font-size: 16px; }
+        .section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+        /* Category tags */
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .tag-new { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tag-creative { background: rgba(168,85,247,0.15); color: var(--purple); }
+        .tag-dev { background: rgba(59,130,246,0.15); color: var(--blue); }
+        .tag-strategy { background: rgba(234,179,8,0.15); color: var(--yellow); }
+        .tag-meta { background: rgba(236,72,153,0.15); color: var(--pink); }
+        .tag-data { background: rgba(6,182,212,0.15); color: var(--cyan); }
+        .tag-docs { background: rgba(249,115,22,0.15); color: var(--orange); }
+
+        /* Skill cards */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+        .skill-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(99,102,241,0.3);
+            transform: translateY(-2px);
+        }
+        .skill-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .skill-name {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .skill-card .category-tag { margin-left: auto; flex-shrink: 0; }
+        .skill-description {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .skill-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-meta-item {
+            font-size: 12px;
+            color: var(--text-muted);
+            padding: 3px 8px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 4px;
+        }
+        .skill-source {
+            margin-top: 12px;
+            font-size: 12px;
+        }
+        .skill-source a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+        .skill-source a:hover { text-decoration: underline; }
+
+        /* Philosophy */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .philosophy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .philosophy-card .icon { font-size: 24px; margin-bottom: 12px; }
+        .philosophy-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .philosophy-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+        /* Sources table */
+        .sources-table { width: 100%; border-collapse: collapse; }
+        .sources-table th {
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .sources-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 14px;
+        }
+        .sources-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .sources-table a { color: var(--accent-light); text-decoration: none; }
+        .sources-table a:hover { text-decoration: underline; }
+        .compat-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .compat-open { background: rgba(34,197,94,0.15); color: var(--green); }
+        .compat-claude { background: rgba(99,102,241,0.15); color: var(--accent-light); }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        footer a { color: var(--accent-light); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 50px 0 40px; }
+            .hero-stats { gap: 24px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .sources-table { font-size: 12px; }
+            .sources-table th, .sources-table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><span class="dot"></span> Open Source Skills Collection</div>
+            <h1>AI Skills <span class="gradient">Library</span></h1>
+            <p>A curated collection of AI agent skills covering visual engineering, code explanation, product research, marketing, design, and more. Built to compound — every skill makes the system smarter.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value" style="color: var(--accent-light);">4</div>
+                    <div class="stat-label">New Skills</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" style="color: var(--green);">7</div>
+                    <div class="stat-label">Research Sources</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" style="color: var(--purple);">40+</div>
+                    <div class="stat-label">Total Skills in System</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Skills -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Newly Added Skills</h2>
+                <p>Created from community research and adapted for universal agent use.</p>
+            </div>
+            <div class="skills-grid">
+
+                <!-- Photography AI -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Photography AI</div>
+                        <span class="category-tag tag-new">NEW</span>
+                    </div>
+                    <p class="skill-description">Professional visual engineering framework covering prompt engineering, photographic literacy, strategic negation, identity preservation, post-processing, and agent orchestration for AI image and video generation.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Image Gen</span>
+                        <span class="skill-meta-item">Video Gen</span>
+                        <span class="skill-meta-item">Prompting</span>
+                        <span class="skill-meta-item">Orchestration</span>
+                    </div>
+                    <div class="skill-source">Source: <a href="https://marktantongco.github.io/aiskills-photog/" target="_blank">marktantongco/aiskills-photog</a></div>
+                </div>
+
+                <!-- Explained Code -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Explained Code</div>
+                        <span class="category-tag tag-new">NEW</span>
+                    </div>
+                    <p class="skill-description">Transforms complex code into beginner-friendly explanations using analogies, diagrams (ASCII/Mermaid), step-by-step walkthroughs, gotchas, and practice challenges. Inspired by Anthropic's official example.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Education</span>
+                        <span class="skill-meta-item">Documentation</span>
+                        <span class="skill-meta-item">Onboarding</span>
+                    </div>
+                    <div class="skill-source">Inspired by: <a href="https://docs.anthropic.com/en/docs/claude-code/skills" target="_blank">Anthropic Docs</a></div>
+                </div>
+
+                <!-- JTBD Research -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">JTBD Research</div>
+                        <span class="category-tag tag-new">NEW</span>
+                    </div>
+                    <p class="skill-description">Jobs to be Done product research methodology. Breaks down user needs into functional, emotional, and social components. Includes market segmentation, job mapping, assumption testing, interview guides, and landing page copy generation.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Product Research</span>
+                        <span class="skill-meta-item">JTBD</span>
+                        <span class="skill-meta-item">Segmentation</span>
+                        <span class="skill-meta-item">Interviews</span>
+                    </div>
+                    <div class="skill-source">Based on: <a href="https://github.com/snowtema/ajtbd-skills" target="_blank">snowtema/ajtbd-skills</a></div>
+                </div>
+
+                <!-- Skill Finder -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Skill Finder</div>
+                        <span class="category-tag tag-new">NEW</span>
+                    </div>
+                    <p class="skill-description">Meta-skill for discovering, evaluating, and installing AI agent skills from community platforms. Includes security vetting, duplication checks, evaluation scorecards, and periodic audit scheduling. Ensures MECE discipline.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Discovery</span>
+                        <span class="skill-meta-item">Evaluation</span>
+                        <span class="skill-meta-item">Security</span>
+                        <span class="skill-meta-item">Meta</span>
+                    </div>
+                    <div class="skill-source">Sources: <a href="https://skills.sh" target="_blank">skills.sh</a>, <a href="https://agentskills.io" target="_blank">agentskills.io</a></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Existing Skills -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Existing Skills in System</h2>
+                <p>Pre-installed skills already available in the environment.</p>
+            </div>
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">GSAP Animations</div>
+                        <span class="category-tag tag-dev">DEV</span>
+                    </div>
+                    <p class="skill-description">Expert-level GSAP animation engineering for React apps — ScrollTrigger, timelines, micro-interactions, kinetic typography, and performance optimization.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Animations</span>
+                        <span class="skill-meta-item">GSAP</span>
+                        <span class="skill-meta-item">React</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">UI/UX Pro Max</div>
+                        <span class="category-tag tag-creative">CREATIVE</span>
+                    </div>
+                    <p class="skill-description">Comprehensive UI/UX design intelligence — design system generation, UX flow mapping, visual style direction, and implementation guidance across major frameworks.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">UI/UX</span>
+                        <span class="skill-meta-item">Design Systems</span>
+                        <span class="skill-meta-item">Multi-stack</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Marketing Mode</div>
+                        <span class="category-tag tag-strategy">STRATEGY</span>
+                    </div>
+                    <p class="skill-description">All-in-one marketing knowledge base spanning 23 disciplines: SEO, copywriting, conversion optimization, paid ads, email marketing, pricing, and behavioral psychology.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Marketing</span>
+                        <span class="skill-meta-item">SEO</span>
+                        <span class="skill-meta-item">Copywriting</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Fullstack Dev</div>
+                        <span class="category-tag tag-dev">DEV</span>
+                    </div>
+                    <p class="skill-description">Fullstack web development with Next.js 16, TypeScript, Tailwind CSS 4, shadcn/ui, and Prisma ORM — database setup, API routes, WebSocket support, and UI standards.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Next.js</span>
+                        <span class="skill-meta-item">TypeScript</span>
+                        <span class="skill-meta-item">Prisma</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Visual Design Foundations</div>
+                        <span class="category-tag tag-creative">CREATIVE</span>
+                    </div>
+                    <p class="skill-description">Typography scales, color theory with WCAG accessibility, 8-point spacing grid, iconography, dark mode theming, and design token implementation.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Typography</span>
+                        <span class="skill-meta-item">Color</span>
+                        <span class="skill-meta-item">Accessibility</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Charts & Visualization</div>
+                        <span class="category-tag tag-data">DATA</span>
+                    </div>
+                    <p class="skill-description">Data visualization skill supporting matplotlib, seaborn, ECharts, D3.js, Mermaid diagrams, and Playwright+CSS charts. Covers bar, line, pie, scatter, heatmaps, flowcharts, and mind maps.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Charts</span>
+                        <span class="skill-meta-item">D3.js</span>
+                        <span class="skill-meta-item">Mermaid</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Coding Agent</div>
+                        <span class="category-tag tag-dev">DEV</span>
+                    </div>
+                    <p class="skill-description">Structured coding workflow with planning, execution, and verification steps. Stores user preferences and enforces plan-before-code discipline.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Workflow</span>
+                        <span class="skill-meta-item">Planning</span>
+                        <span class="skill-meta-item">Verification</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <div class="skill-name">Content Strategy</div>
+                        <span class="category-tag tag-strategy">STRATEGY</span>
+                    </div>
+                    <p class="skill-description">Solopreneur-focused content marketing playbook — audience building, format/channel selection, content calendars, repurposing workflows, and ROI measurement.</p>
+                    <div class="skill-meta">
+                        <span class="skill-meta-item">Content</span>
+                        <span class="skill-meta-item">Calendar</span>
+                        <span class="skill-meta-item">Repurposing</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Philosophy -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Operating Principle</h2>
+                <p>How this library works — build systems, not one-off tasks.</p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="icon">&#9889;</div>
+                    <h3>No One-Off Work</h3>
+                    <p>Every repeatable request becomes a skill. If you ask for the same thing twice, the system failed the first time.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128269;</div>
+                    <h3>Check First</h3>
+                    <p>Search existing skills before creating new ones. Extend, don't duplicate. MECE discipline: one owner skill per type of work.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128640;</div>
+                    <h3>Build It Once</h3>
+                    <p>Prototype, get approval, codify into SKILL.md, schedule on cron. Every skill added makes the system smarter.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128737;</div>
+                    <h3>Security First</h3>
+                    <p>Every skill is vetted before installation. No arbitrary code execution, no unauthorized access, no suspicious patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Research Sources -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Sources</h2>
+                <p>Where these skills were discovered and evaluated.</p>
+            </div>
+            <table class="sources-table">
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Type</th>
+                        <th>Compatibility</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>skills.sh</strong></td>
+                        <td>Marketplace</td>
+                        <td><span class="compat-badge compat-open">Open Standard</span></td>
+                        <td><a href="https://skills.sh" target="_blank">skills.sh</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic Academy</strong></td>
+                        <td>Official Courses</td>
+                        <td><span class="compat-badge compat-claude">Claude</span></td>
+                        <td><a href="https://anthropic.skilljar.com/claude-code-skills" target="_blank">anthropic.skilljar.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agent Skills Standard</strong></td>
+                        <td>Open Spec</td>
+                        <td><span class="compat-badge compat-open">Open Standard</span></td>
+                        <td><a href="https://agentskills.io" target="_blank">agentskills.io</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Skills Library</strong></td>
+                        <td>Collection (36 skills)</td>
+                        <td><span class="compat-badge compat-claude">Claude</span></td>
+                        <td><a href="https://github.com/aiaiohhh/claude-skills-library" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AJTBD Skills</strong></td>
+                        <td>Product Research</td>
+                        <td><span class="compat-badge compat-claude">Claude</span></td>
+                        <td><a href="https://github.com/snowtema/ajtbd-skills" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GSAP Animation Skill</strong></td>
+                        <td>Animation Reference</td>
+                        <td><span class="compat-badge compat-open">Universal</span></td>
+                        <td><a href="https://github.com/xerxes-on/gsap-animation-skill" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Photography AI Skills</strong></td>
+                        <td>Visual Engineering</td>
+                        <td><span class="compat-badge compat-open">Universal</span></td>
+                        <td><a href="https://marktantongco.github.io/aiskills-photog/" target="_blank">GitHub Pages</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Getting Started -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Getting Started</h2>
+                <p>How to use and extend this skills library.</p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="icon">&#128193;</div>
+                    <h3>Install Skills</h3>
+                    <p>Copy any skill's SKILL.md into your agent's skills directory. Each skill has 4 sections: context, instructions, constraints, and examples.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128270;</div>
+                    <h3>Discover More</h3>
+                    <p>Use the Skill Finder meta-skill to search skills.sh, GitHub, and Anthropic Academy for new capabilities.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128295;</div>
+                    <h3>Create Your Own</h3>
+                    <p>Follow the SKILL.md format: context (when to use), instructions (step-by-step), constraints (hard rules), examples (ideal output).</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">&#128200;</div>
+                    <h3>Compounding System</h3>
+                    <p>Every skill added makes the system smarter. Schedule audits, extend existing skills, and never duplicate coverage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>AI Skills Library &mdash; Open source agent skills collection</p>
+            <p style="margin-top: 8px;">
+                <a href="https://github.com/marktantongco/ai-skills-library" target="_blank">GitHub</a> &bull;
+                <a href="https://skills.sh" target="_blank">skills.sh</a> &bull;
+                <a href="https://agentskills.io" target="_blank">Agent Skills Standard</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
