@@ -186,7 +186,7 @@ These skills were already installed in the environment before this research:
 | Platform | URL | Status |
 |----------|-----|--------|
 | **GitHub Pages** | [marktantongco.github.io/ai-skills-library](https://marktantongco.github.io/ai-skills-library) | Live |
-| **Vercel** | [ai-skills-library.vercel.app](https://ai-skills-library.vercel.app) | Live |
+| **Vercel** | [ai-skills-library-three.vercel.app](https://ai-skills-library-three.vercel.app) | Live |
 | **GitHub Repo** | [github.com/marktantongco/ai-skills-library](https://github.com/marktantongco/ai-skills-library) | Live |
 
 ---
