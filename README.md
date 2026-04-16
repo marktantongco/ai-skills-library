@@ -3,8 +3,8 @@
 > A curated collection of AI agent skills covering reasoning, development, monetization, content, strategy, creative, data, DevOps, and meta capabilities. Built to compound — every skill makes the system smarter.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-22c55e?logo=github)](https://marktantongco.github.io/ai-skills-library/)
-[![Skills](https://img.shields.io/badge/Skills-19-6366f1?logo=robot)]()
-[![New Skills](https://img.shields.io/badge/New_Skills-11-22c55e?logo=plus)]()
+[![Skills](https://img.shields.io/badge/Skills-20-6366f1?logo=robot)]()
+[![New Skills](https://img.shields.io/badge/New_Skills-12-22c55e?logo=plus)]()
 [![Extended Skills](https://img.shields.io/badge/Extended_Skills-3-f97316?logo=arrows-rotate)]()
 [![Sources](https://img.shields.io/badge/Research_Sources-7-eab308)]()
 [![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-ec4899)]()
@@ -13,9 +13,9 @@
 
 ## Overview
 
-This repository is the result of a comprehensive research effort into the AI agent skills ecosystem. Across two sessions, it has grown from 4 skills to **19 skills**:
+This repository is the result of a comprehensive research effort into the AI agent skills ecosystem. Across three sessions, it has grown from 4 skills to **20 skills**:
 
-- **11 newly created skills** from this session (reasoning, development, monetization, content, DevOps)
+- **12 newly created skills** across sessions (reasoning, development, monetization, content, DevOps, API integration)
 - **3 extended skills** upgraded with new capabilities (batch processing, GEO optimization, site crawling)
 - **5 skills from the previous session** carried forward and maintained
 - **Evaluation of 7+ external sources** (skills.sh, Anthropic Academy, GitHub, etc.)
@@ -46,6 +46,7 @@ This repository is the result of a comprehensive research effort into the AI age
 | 15 | [Explained Code](skills/explained-code/SKILL.md) | Education | Beginner-friendly code explanation with analogies and diagrams | 196 | Previous |
 | 16 | [JTBD Research](skills/jtbd-research/SKILL.md) | Strategy | Jobs to be Done product research methodology | 250 | Previous |
 | 17 | [Skill Finder](skills/skill-finder/SKILL.md) | Meta | Skill discovery, evaluation, and installation | 226 | Previous |
+| 18 | [NVIDIA NIM API Builder](skills/nvidia-build/SKILL.md) | API Integration | LLM inference via NVIDIA NIM API (Llama, Nemotron, etc.) | 180 | NEW |
 
 ---
 
@@ -101,6 +102,12 @@ Revenue and audience growth tools:
 | **Web Reader** | Web page content extraction with site crawling, spidering, and structured data retrieval (extended) | 1648 |
 | **Deployment Manager** | Deploy, monitor, and update projects across multiple platforms — CI/CD, health checks, and rollback procedures | 101 |
 
+### API Integration Skills (1 skill)
+
+| Skill | Description | Lines |
+|-------|-------------|-------|
+| **NVIDIA NIM API Builder** | Authenticate and call NVIDIA's hosted LLM API (build.nvidia.com) for inference with models like Llama 4 Maverick, Nemotron, and DeepSeek Coder — supports streaming, batch processing, and Next.js proxy integration | 180 |
+
 ### Meta Skills (2 skills)
 
 | Skill | Description | Lines |
@@ -129,7 +136,7 @@ The entire skills library is available as a single installable reference:
 https://raw.githubusercontent.com/marktantongco/ai-skills-library/main/AGENTS.md
 ```
 
-Just paste this URL into any AI agent (Claude, ChatGPT, etc.) and it can read and use all 19 skills immediately.
+Just paste this URL into any AI agent (Claude, ChatGPT, etc.) and it can read and use all 20 skills immediately.
 
 ### For Developers
 
